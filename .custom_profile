@@ -1,0 +1,24 @@
+
+#Commands
+alias python=python3
+alias ls="ls -ABhlpks"
+alias du="du-ch"
+alias dutop="du -ch --max-depth=1 | sort -h"
+alias rm="rm -I"
+alias less="less -N"
+alias grep="grep -n --color=always"
+alias cp="cp -v"
+
+#Colors! Both Unix and OSX
+d=~/config/.dircolors
+test -r $d && eval "$(dircolors $d)"
+
+
+CLICOLORS=1
+
+#Git stuff
+source ~/config/git-prompt.sh
+#need nvm stuff here, too if the performance is insufficient
+
+#Promt
+PS1='\!|\[\033[38;5;14m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;9m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;12m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]$(__git_ps1) \[$(tput sgr0)\]\[\033[38;5;1m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]'
